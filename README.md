@@ -1,1 +1,1 @@
-# open_ai_hackathon
+## The Cyber Savvy Ninjas!
