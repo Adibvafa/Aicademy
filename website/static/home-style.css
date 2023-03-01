@@ -2,16 +2,24 @@
 
 body {
     height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.my-container {
+    /* height: 100vh; */
+    width: 100%;
+	height: 100%;
     /* fallback for old browsers */
     /* background-color: #4b79a1; */
     /* gradient */
     background: linear-gradient(0deg, rgba(127, 127, 213, 1) 14%, rgba(145, 234, 228,0.711922268907563) 90%);
   }
   
-  /* center the container element */
+  /* center the container element
   .my-container {
     margin-top: 50px;
-  }
+  } */
 
   .form-holder {
       position: relative;
