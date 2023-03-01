@@ -6,11 +6,11 @@
 
 #content-page {
     flex-basis: 50%;
-    background: #dec9c9;
+    /* background: #dec9c9; */
     height: 100%;
     margin: 5px;
     border-radius: 2%;
-
+    border:0.2em solid black;
 }
 
 #input-page {
@@ -20,10 +20,40 @@
     margin: 5px;
     border-radius: 2%;
 
+    display: flex;
+    flex-direction: column;
+}
+
+#messages-display {
+    background: #FFFFFF;
+    margin: 1.5em 2.6em;
+    margin-bottom: 1em;
+    border-radius: 2%;
+    flex-basis: 85%;
+}
+
+#input-area {
+    flex-basis: 15%;
+    display: flex;
+    flex-direction: column;
+    /* background: #329148; */
+}
+
+#button-area {
+    flex-basis: 50%;
+    /* background: #dec9c9; */
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#gen-quiz, #gen-summary {
+    flex-basis: auto;
+    margin: 0.3em;
 }
 
 /* CREDIT: https://codepen.io/ramilulu/pen/mrNoXw*/
 .message-box {
+    flex-basis: 50%;
     flex: 0 1 42px;
     width: 90%;
     background: #fff; 
@@ -33,12 +63,12 @@
   box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.4);*/
     /*background: rgba(0, 0, 0, 0.3);
       border-top:1px solid #e3e3e3;*/
-    padding: 10px;
+    padding: 5px;
     position: relative;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px; 
-    height:14px;
+    /* height:30px; */
     border:1px solid #ccc;
 }
 .message-input {
@@ -51,7 +81,8 @@
     height: 24px;
     margin: 0;
     padding-right: 20px;
-    width: 265px;
+    padding-left: 10px;
+    width: 100%;
     color: #444;
 }
 textarea:focus:-webkit-placeholder {
@@ -61,7 +92,7 @@ textarea:focus:-webkit-placeholder {
 .message-submit {
       position: absolute;
       z-index: 1;
-      top: 9px;
+      top: 7px;
       right: 10px;
       color: #4A90E2;
       border: none;

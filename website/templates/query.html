@@ -5,13 +5,27 @@
 {% block content %}
 <div class="big-container">
     <div id="content-page">
+        {% for i in range(5) %}
+        <p class="content-paragraphs">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Esse sequi omnis facere, iure earum odit vel eum similique eaque sapiente alias, 
+            dicta praesentium placeat harum eveniet. Natus quasi saepe eum?</p>
+        {% endfor %}
     </div>
 
     <div id="input-page">
-        <div class="message-box">
-            <textarea type="text" class="message-input" placeholder="Type message..."></textarea>
-            <button type="submit" class="message-submit">Send</button>
-          </div>
+        <div id="messages-display">
+
+        </div>
+        <div id="input-area">
+            <div class="message-box">
+                <textarea type="text" class="message-input" placeholder="Type message..."></textarea>
+                <button type="submit" class="message-submit">Send</button>
+              </div>
+              <div id="button-area">
+                  <button id="gen-quiz" class="btn btn-primary my-btn">Quiz Me!</button>
+                  <button id="gen-summary" class="btn btn-primary my-btn">Summarize</button>
+              </div>
+        </div>
     </div>
 </div>
 

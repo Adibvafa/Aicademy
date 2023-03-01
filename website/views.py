@@ -8,6 +8,8 @@ import json
 # courseText
 # quizQuestions
 # response
+# summary
+# images
 
 
 # usually easier to keep the name the same as the file
