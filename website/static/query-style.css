@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
 .big-container {
     display: flex;
     width: 100%;
@@ -5,17 +6,18 @@
 }
 
 #content-page {
-    flex-basis: 50%;
+    flex-basis: 62%;
     /* background: #dec9c9; */
     height: 100%;
     margin: 5px;
     border-radius: 2%;
     border:0.2em solid black;
+    overflow: scroll;
 }
 
 #input-page {
-    flex-basis: 50%;
-    background: rgba(30, 30, 30, 0.8);
+    flex-basis: 38%;
+    background: #75C2B0;
     height: 100%;
     margin: 5px;
     border-radius: 2%;
@@ -25,11 +27,13 @@
 }
 
 #messages-display {
-    background: #FFFFFF;
+    /* background: #9DAAB4; */
+    background: #C5D2DC;
     margin: 1.5em 2.6em;
     margin-bottom: 1em;
     border-radius: 2%;
     flex-basis: 85%;
+    overflow-y: scroll;
 }
 
 #input-area {
@@ -51,11 +55,50 @@
     margin: 0.3em;
 }
 
+#inner-content {
+    margin: 1em;
+}
+
+#prompt-h1 {
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+}
+
+.content-paragraphs {
+    font-family: 'Montserrat';
+    font-size: 1.5em;
+}
+
+#messages {
+    margin: 2em 1em 2em 1em;
+    font-family: 'Montserrat';
+    font-size: 1.3em;
+    overflow: scroll;
+}
+
+.user-message {
+    list-style-image: url('images/user-icon.png');
+    margin-bottom: 0.8rem;
+}
+.computer-message {
+    list-style-image: url('images/computer-icon.png');
+    margin-bottom: 0.8rem;
+}
+
+.content-images {
+    display: block;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 4rem;
+}
+
 /* CREDIT: https://codepen.io/ramilulu/pen/mrNoXw*/
-.message-box {
+#message-box {
     flex-basis: 50%;
     flex: 0 1 42px;
-    width: 90%;
+    width: 85%;
     background: #fff; 
     margin:2px auto;
   /*-webkit-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.4);
@@ -71,7 +114,7 @@
     /* height:30px; */
     border:1px solid #ccc;
 }
-.message-input {
+#message-input {
     background: none;
     border: none;
     outline: none!important;
@@ -89,7 +132,7 @@ textarea:focus:-webkit-placeholder {
       color: transparent;
 }
 
-.message-submit {
+#message-submit {
       position: absolute;
       z-index: 1;
       top: 7px;
@@ -107,7 +150,7 @@ textarea:focus:-webkit-placeholder {
       transition: background .2s ease;
       cursor:pointer;
 }
-.message-submit:hover {
+#message-submit:hover {
         background: #fff;
         color: #333;
 }
