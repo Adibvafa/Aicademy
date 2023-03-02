@@ -1,7 +1,4 @@
-import openai
-import random
 
-openai.api_key = "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"
 #openai.Model.list()
 #print("\n\nLinked Lists in Computer Science\n\nLinked lists are a fundamental data structure used in computer science. They are a type of linear data structure, meaning they store data in a linear fashion. Unlike arrays, linked lists are dynamic in size and can grow or shrink as needed.\n\nA linked list consists of nodes, which are the individual elements of the list. Each node contains a data element and a pointer to the next node in the list. This makes it possible to traverse the list in a linear fashion.\n\nPictures\n\n[Insert Pictures]\n\nLinked lists are useful in a variety of applications, such as sorting and searching data. They can also be used to implement stacks and queues, which are also important data structures in computer science.\n\nLinked lists are also used in graph algorithms, such as depth-first search and breadth-first search. These algorithms traverse the graph by following the edges of the graph, which are represented by the linked list.\n\nPictures\n\n[Insert Pictures]\n\nLinked lists are an important data structure in computer science, used in a variety of applications. This course has discussed how linked lists are structured, how they are used in sorting and searching data, and how they are used in graph algorithms.\n\nThis course has provided an overview of linked lists in computer science, including their structure, uses, and applications. It has also discussed how linked lists are used in graph algorithms, such as depth-first search and breadth-first search. The course has also included pictures to illustrate the concepts discussed.")
 #list1 = [1, 2, 3, 4]
@@ -70,6 +67,11 @@ openai.api_key = "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"
 # print("\n")
 # print(ans)
 def get_question(arr):
+  import openai
+  import random
+
+  openai.api_key = "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"
+  
   package = {}
   package["reference"] = random.randint(1,3)
   paragraph = arr[package["reference"]]
