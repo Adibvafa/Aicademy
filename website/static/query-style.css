@@ -71,7 +71,20 @@
     font-size: 1.5em;
 }
 
-#messages {
+.message-holder {
+    display: inline-block;
+    width: 100%;
+}
+
+.user-colour {
+    background-color: #9bbdd7;
+}
+
+.computer-colour {
+    background-color: #698aae;
+}
+
+.messages {
     margin: 2em 1em 2em 1em;
     font-family: 'Montserrat';
     font-size: 1.3em;

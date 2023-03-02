@@ -150,58 +150,124 @@ function addUserMessage() {
     const messagesDisplay = document.querySelector('#messages-display');
     let prompt = textInput.value
     if (prompt !== '') {
-        const ul = document.querySelector('#messages');
+        let ul = document.createElement('ul');
+        ul.classList.add('messages')
         let new_li = document.createElement('li');
         new_li.classList.add('user-message');
         new_li.innerText = prompt;
         ul.appendChild(new_li)
 
+        let newMessageHolder = document.createElement('div');
+        newMessageHolder.classList.add('message-holder');
+        newMessageHolder.classList.add('user-colour');
+        newMessageHolder.appendChild(ul);
+        messagesDisplay.appendChild(newMessageHolder);
+
         generateResponse(prompt).then(resp => {
             console.log(`property1 is: ${resp}`);
+            // new_li = document.createElement('li');
+            // new_li.classList.add('computer-message');
+            // new_li.innerText = resp;
+            // ul.appendChild(new_li)
+
+            ul = document.createElement('ul');
+            ul.classList.add('messages')
             new_li = document.createElement('li');
             new_li.classList.add('computer-message');
             new_li.innerText = resp;
             ul.appendChild(new_li)
-          });
+
+            newMessageHolder = document.createElement('div');
+            newMessageHolder.classList.add('message-holder');
+            newMessageHolder.classList.add('computer-colour');
+            newMessageHolder.appendChild(ul);
+            messagesDisplay.appendChild(newMessageHolder);
+
+            messagesDisplay.scrollTop = messagesDisplay.scrollHeight;
+        });
     }
     textInput.value = '';
-    messagesDisplay.scrollTop = messagesDisplay.scrollHeight;
 }
 
 function addSummary() {
-    const ul = document.querySelector('#messages');
-    let new_li_2 = document.createElement('li');
+    const messagesDisplay = document.querySelector('#messages-display');
     generateSummary().then(resp => {
         console.log(`property1 is: ${resp}`);
+        
+        let ul = document.createElement('ul');
+        ul.classList.add('messages')
+        let new_li_2 = document.createElement('li');
         new_li_2.classList.add('computer-message');
         new_li_2.innerText = "Summary: " + resp;
         ul.appendChild(new_li_2);
+
+        let newMessageHolder = document.createElement('div');
+        newMessageHolder.classList.add('message-holder');
+        newMessageHolder.classList.add('computer-colour');
+        newMessageHolder.appendChild(ul);
+        messagesDisplay.appendChild(newMessageHolder);
+
+
+        messagesDisplay.scrollTop = messagesDisplay.scrollHeight;
     });
 }
 
 function addQuiz() {
-    const ul = document.querySelector('#messages');
+    const messagesDisplay = document.querySelector('#messages-display');
+    let ul = document.createElement('ul');
+    ul.classList.add('messages');
     let new_li_3 = document.createElement('li');
     new_li_3.classList.add('computer-message');
     new_li_3.innerText = "Generating question...";
     ul.appendChild(new_li_3);
 
+    let newMessageHolder = document.createElement('div');
+    newMessageHolder.classList.add('message-holder');
+    newMessageHolder.classList.add('computer-colour');
+    newMessageHolder.appendChild(ul);
+    messagesDisplay.appendChild(newMessageHolder);
+    
     generateQuiz().then(resp => {
         console.log(`property1 is: ${resp}`);
+        ul = document.createElement('ul');
+        ul.classList.add('messages');
+        new_li_3 = document.createElement('li');
         new_li_3.classList.add('computer-message');
         new_li_3.innerText = "Question: " + resp["question"] + ` (from paragraph ${resp["reference"]})`;
         ul.appendChild(new_li_3);
+
+        newMessageHolder = document.createElement('div');
+        newMessageHolder.classList.add('message-holder');
+        newMessageHolder.classList.add('computer-colour');
+        newMessageHolder.appendChild(ul);
+        messagesDisplay.appendChild(newMessageHolder);
         
         waitForSubmit().then(userInput => {
+            ul = document.createElement('ul');
+            ul.classList.add('messages');
             new_li_3 = document.createElement('li');
             new_li_3.classList.add('user-message');
             new_li_3.innerText = userInput;
             ul.appendChild(new_li_3);
-
+            newMessageHolder = document.createElement('div');
+            newMessageHolder.classList.add('message-holder');
+            newMessageHolder.classList.add('user-colour');
+            newMessageHolder.appendChild(ul);
+            messagesDisplay.appendChild(newMessageHolder);
+            
+            ul = document.createElement('ul');
+            ul.classList.add('messages');
             new_li_3 = document.createElement('li');
             new_li_3.classList.add('computer-message');
             new_li_3.innerText = "Answer: " + resp["answer"];
             ul.appendChild(new_li_3);
+            newMessageHolder = document.createElement('div');
+            newMessageHolder.classList.add('message-holder');
+            newMessageHolder.classList.add('computer-colour');
+            newMessageHolder.appendChild(ul);
+            messagesDisplay.appendChild(newMessageHolder);
+
+            messagesDisplay.scrollTop = messagesDisplay.scrollHeight;
         });
     });
     
