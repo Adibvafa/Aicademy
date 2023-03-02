@@ -19,15 +19,28 @@ def Create_Course(user_input):
     Returns list of paragraphs, and list of images for index 0 and -3
     :param user_input: Input of user
     """
+    person_prompt = "Who is a good person to create a course on the topic " + user_input + \
+                    ". Give the answer as maximum 4 words"
+
+    person_response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[{"role": "user", "content": person_prompt}],
+        temperature=0.1,
+        max_tokens=8,
+        top_p=0.95,
+    )
+    person = person_response["choices"][0]["message"]["content"]
+
+    begin_prompt = "You have to act as a " + person + 'Give a professional course on'
     end_prompt = """. Explain with numerous accurate detail and use engaging clear understandable sentences.
     Start with introduction, divide it to several long paragraphs and end with summarizing conclusion.
     Put @@ in the beginning of each paragraph. """
-    text_prompt = 'Give a professional course on' + user_input + end_prompt
+    text_prompt = begin_prompt + user_input + end_prompt
 
     description_response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": text_prompt}],
-        temperature=0.1,
+        temperature=0.12,
         max_tokens=2000,
         top_p=0.95,
     )
