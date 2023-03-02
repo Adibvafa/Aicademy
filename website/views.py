@@ -4,6 +4,9 @@ from flask import Blueprint, redirect, render_template, request, flash, jsonify,
 # from . import db
 # from sqlalchemy.sql import func
 import json
+import string
+
+from .Creator import Create_Course
 
 # courseText
 # quizQuestions
@@ -30,12 +33,9 @@ def home():
             flash('Query is too short!', category="error")
         else:
             global prompt, courseParagraphs, courseImages
-            prompt = query
-            for i in range(8):
-                courseParagraphs.append("Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sequi omnis facere, \
-                iure earum odit vel eum similique eaque sapiente alias, dicta praesentium placeat harum eveniet. \
-                Natus quasi saepe eum?")
-                courseImages.append(url_for('static', filename='images/Fantasy.jpeg'))
+            prompt = string.capwords(query, sep=None)
+
+            courseParagraphs, courseImages = Create_Course(query)
             return redirect(url_for('views.query'))
             # new_note = Note(data=note, user_id=current_user.id)
             # print(current_user.id)
