@@ -26,12 +26,12 @@ def Create_Course(user_input):
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": person_prompt}],
         temperature=0.1,
-        max_tokens=8,
+        max_tokens=6,
         top_p=0.95,
     )
     person = person_response["choices"][0]["message"]["content"]
 
-    begin_prompt = "You have to act as a " + person + 'Give a professional course on'
+    begin_prompt = "You have to act as a " + person + 'Give a professional course on '
     end_prompt = """. Explain with numerous accurate detail and use engaging clear understandable sentences.
     Start with introduction, divide it to several long paragraphs and end with summarizing conclusion.
     Put @@ in the beginning of each paragraph. """
@@ -40,7 +40,7 @@ def Create_Course(user_input):
     description_response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": text_prompt}],
-        temperature=0.12,
+        temperature=0.1,
         max_tokens=2000,
         top_p=0.95,
     )
@@ -64,7 +64,7 @@ def Create_Course(user_input):
             model="text-davinci-003",
             prompt=pic_prompt,
             temperature=0.15,
-            max_tokens=280,
+            max_tokens=300,
             top_p=0.88,
             best_of=1,
             frequency_penalty=0.2,
