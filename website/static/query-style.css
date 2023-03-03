@@ -17,7 +17,7 @@
 
 #input-page {
     flex-basis: 38%;
-    background: #75C2B0;
+    background: #EFEFEF;
     height: 100%;
     margin: 5px;
     border-radius: 2%;
@@ -28,7 +28,7 @@
 
 #messages-display {
     /* background: #9DAAB4; */
-    background: #C5D2DC;
+    background: #FFFFFF;
     margin: 2.3em 2.9em;
     margin-bottom: 1em;
     border-radius: 2%;
@@ -77,17 +77,18 @@
 }
 
 .user-colour {
-    background-color: #9bbdd7;
+    background-color: #F6F6F6;
 }
 
 .computer-colour {
-    background-color: #698aae;
+    background-color: #FFFFFF;
 }
 
 .messages {
     margin: 2em 1em 2em 1em;
     font-family: 'Montserrat';
     font-size: 1.3em;
+    overflow: scroll;
 }
 
 .without-image {
@@ -115,7 +116,7 @@
     flex-basis: 50%;
     flex: 0 1 42px;
     width: 85%;
-    background: #fff; 
+    background: #fff;
     margin:2px auto;
   /*-webkit-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.4);
   -moz-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.4);
@@ -170,5 +171,3 @@ textarea:focus:-webkit-placeholder {
         background: #fff;
         color: #333;
 }
-
-  

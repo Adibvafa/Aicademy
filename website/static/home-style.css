@@ -27,6 +27,15 @@ body {
       /* border-width: 2em; */
       /* border-color: chartreuse; */
   }
+
+  #larger-text {
+    font-size: 4em;
+    font-weight: bold;
+    font-family: 'Varela Round', sans-serif;
+    color: #444444;
+    margin-bottom: 0.5em;
+    text-shadow: 0 .5rem 1rem rgba(50, 0, 100, .1)
+  }
   
   /* style the h1 heading */
   .my-h1 {
@@ -34,7 +43,7 @@ body {
     font-weight: bold;
     font-family: 'Varela Round', sans-serif;
     color: #444444;
-    margin-bottom: 30px;
+    margin-bottom: 0.7em;
     text-shadow: 0 .5rem 1rem rgba(50, 0, 100, .1)
   }
   
