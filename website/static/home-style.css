@@ -101,6 +101,10 @@ body {
 
   }
 
+.loading {
+  width: 50%;
+}
+
 /* .button-81:hover {
   background-color: #1e293b;
   color: #fff;
