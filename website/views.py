@@ -7,6 +7,7 @@ import json
 import string
 
 from .Creator import Create_Course
+from .get_question import get_question
 
 # courseText
 # quizQuestions
@@ -68,7 +69,9 @@ def generate_quiz():
     # prompt = json.loads(request.data)
     # promptText = prompt['text']
     # print(promptText)
-    return jsonify({"question": "What are the first 10 digits of pi?", "answer": "3.141592653", "reference": 3})
+
+    # return jsonify({"question": "What are the first 10 digits of pi?", "answer": "3.141592653", "reference": 3})
+    return jsonify(get_question(courseParagraphs))
 
 # @views.route('/delete-note', methods=['POST'])
 # def delete_note():

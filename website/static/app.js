@@ -226,6 +226,8 @@ function addQuiz() {
     newMessageHolder.classList.add('computer-colour');
     newMessageHolder.appendChild(ul);
     messagesDisplay.appendChild(newMessageHolder);
+
+    messagesDisplay.scrollTop = messagesDisplay.scrollHeight;
     
     generateQuiz().then(resp => {
         console.log(`property1 is: ${resp}`);
@@ -241,6 +243,8 @@ function addQuiz() {
         newMessageHolder.classList.add('computer-colour');
         newMessageHolder.appendChild(ul);
         messagesDisplay.appendChild(newMessageHolder);
+
+        messagesDisplay.scrollTop = messagesDisplay.scrollHeight;
         
         waitForSubmit().then(userInput => {
             ul = document.createElement('ul');

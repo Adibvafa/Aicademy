@@ -91,6 +91,10 @@
     overflow: scroll;
 }
 
+.without-image {
+    margin-bottom: 5rem;
+}
+
 .user-message {
     list-style-image: url('images/user-icon.png');
     margin-bottom: 0.8rem;
