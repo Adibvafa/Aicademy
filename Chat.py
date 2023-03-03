@@ -4,15 +4,8 @@ Chat.py
 Answers users question in the chat
 """
 
-import os
 import openai
-
 openai.api_key = "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"
-
-from PIL import Image
-import requests
-from io import BytesIO
-
 
 def Answer_Question(user_input, user_question):
     """
